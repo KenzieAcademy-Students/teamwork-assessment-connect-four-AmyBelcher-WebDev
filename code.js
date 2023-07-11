@@ -7,7 +7,12 @@ let gameArray= [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
 ];
+let redPlayer = function(){
 
+}
+let blackPlayer = function(){
+    
+}
 let currentPlayer;
 
 function moveLeft() {}
