@@ -1,27 +1,44 @@
 // Your Code Here.
 let gameArray= [
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null],
 ];
 
 let currentPlayer;
 
-function moveLeft() {}
-function moveRight() {}
-function moveUp() {}
-function moveDown() {}
-
-function addRandomTile() {}
+function addRandomTile() {
+//players turn
+}
 
 function checkIfGameHasEnded() {
     return false
 }
 
-function resetBoard() {}
+function resetBoard() {
 //deletes old DOM and renders new DOM 
+}
 
-function renderBoard(){}
+function renderBoard(){
+
+    
+}
+
+function afterMove() {
+    if (checkIfGameHasEnded()) {
+        alert ("Game Over!")
+    } else {
+        renderBoard();
+        }
+}
+
+function startGame() {
+    resetBoard();
+    addRandomTile();
+    addRandomTile();
+    renderBoard();
+}
+startGame();
