@@ -50,6 +50,7 @@ let initializeGame = function () {
 }
 
 initializeGame()
+  
 
 let testBoard1 = [
   [0, 0, 0, 0, 0, 0, 0],
