@@ -45,4 +45,12 @@ tr {
     height:100px;
     width: 100px;
 }
-
+.redCircle{
+    color:red;
+    border-radius: 50%;
+}
+.blackCircle{
+    color:black;
+    border-radius:50%;
+    
+}
