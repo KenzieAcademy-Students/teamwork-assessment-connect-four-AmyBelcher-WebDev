@@ -45,11 +45,11 @@ tr {
     height:100px;
     width: 100px;
 }
-.redCircle{
+.playerRed{
     color:red;
     border-radius: 50%;
 }
-.blackCircle{
+.blackPlayer{
     color:black;
     border-radius:50%;
     size:50px 50px;
