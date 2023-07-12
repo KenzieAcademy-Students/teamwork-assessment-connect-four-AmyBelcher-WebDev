@@ -154,12 +154,12 @@ let turnTracker = function (turnNumber) {
   return player
 }
 
-// let initializeGame = function () {
-//   //initialize various variables
-//   setUpClickHandlers()
-// }
+let initializeGame = function () {
+  //initialize various variables
+  setUpClickHandlers()
+}
 
-// initializeGame()
+initializeGame()
 
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
