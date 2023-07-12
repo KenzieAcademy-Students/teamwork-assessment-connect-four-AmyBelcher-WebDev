@@ -52,5 +52,5 @@ tr {
 .blackCircle{
     color:black;
     border-radius:50%;
-    
+    size:50px 50px;
 }
