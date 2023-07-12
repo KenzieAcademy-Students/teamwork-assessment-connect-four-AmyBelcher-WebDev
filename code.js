@@ -11,10 +11,11 @@ let board = [
 let currentPlayer = 1;
 let numberOfDiscsPlayed = 0;
 
-let dropDisc = function (event) {
-  //disc dropping code
-  checkForGameOver(board);
-};
+let messageBox= document.querySelector(".messageBox")
+let gameDiv= document.querySelector(".game")
+let tableGrid= document.querySelector(".game.div")
+
+
 
 let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
@@ -37,6 +38,24 @@ let checkForGameOver = function (boardModel) {
     nextPlayer();
   }
 };
+let dropDisc = (countStart, cellValue) => {
+  let tableRow= document.querySelectorAll(".tableRow")
+  let gameCell= document.querySelectorAll(".gameCell")
+    if (board[countStart][cellValue] !== 0) {
+        numberOfDiscsPlayed= numberOfDiscsPlayed += 1;
+        dropDisc(countStart, cellValue)
+    } else {
+        let currentRow= tableRow[countStart].gameCell
+        currentRow[cellValue].classList.add("occupied", `player${currentPlayer}`)
+        board[countStart][cellValue]= currentPlayer; 
+        if(whoIsTheWinner(countStart, cellValue)) {
+          message.innerHTML= `Player <span> ${currentPlayer}</span> wins!`
+          return false;
+        }
+    }
+    checkForGameOver();
+    }
+    console.table(board)
 
 let displayMessage = function (message) {
   //Show message in the message box on the DOM
@@ -54,7 +73,7 @@ initializeGame();
 
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
-document.body.append(startButton);
+messageBox.append(startButton);
 startButton.addEventListener("click", function(){
   alert(`Player ${currentPlayer} start`)
 })
@@ -87,3 +106,4 @@ let testBoard3 = [
   [2, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
 ];
+
