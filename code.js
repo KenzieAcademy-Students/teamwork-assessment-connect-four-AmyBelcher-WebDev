@@ -19,7 +19,7 @@ let dropDisc = function (event) {
     gameDiv.append(column)
     let columnArray= board[i]
   for(let j=0; j<columnArray.length; j += 1) {
-    let gameSlot= document.createElement("span")
+    let gameSlot= document.createElement("div")
     let slotArray= columnArray[j]
     if  (slotArray = 1) {
     gameSlot.classList.add("playerBlack") 
