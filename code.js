@@ -15,6 +15,10 @@ let messageBox = document.querySelector(".messageBox");
 let gameDiv = document.querySelector(".game");
 let tableGrid = document.querySelector(".game.div");
 
+let displayMessage = function (message) {
+  message = document.getElementById(".messageBox")
+};
+
 let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
   //return the player number who won, or null
@@ -25,8 +29,13 @@ let isGameATie = function (boardModel) {
 };
 
 let nextPlayer = function () {
-  // flips value currentplayer
-  // displaymessage(it's players 'currentplayer' turn)
+  if (currentPlayer === 1){
+    currentPlayer = 2
+    displayMessage(`Player ${currentPlayer} it's your turn`)
+  }else if (currentPlayer === 2){
+    currentPlayer = 1
+    displayMessage(`Player ${currentPlayer} it's your turn`)
+  }
 };
 
 let gameOver = function() {
@@ -62,43 +71,39 @@ let dropDisc = (countStart, cellValue) => {
 };
 console.table(board);
 
-let displayMessage = function (message) {
-  //Show message in the message box on the DOM
-};
-
 let setUpClickHandlers = function () {
-let column1 = document.querySelector("column1")
-column1.addEventListener("click", function(){
+let col1 = document.querySelector("column1")
+col1.addEventListener("click", function(){
   dropDisc(1)
 })
 
-let column2 = document.querySelector("column2")
-column2.addEventListener("click", function(){
+let col2 = document.querySelector("column2")
+col2.addEventListener("click", function(){
   dropDisc(2)
 })
 
-let column3 = document.querySelector("column3")
-column3.addEventListener("click", function(){
+let col3 = document.querySelector("column3")
+col3.addEventListener("click", function(){
   dropDisc(3)
 })
 
-let column4 = document.querySelector("column4")
-column4.addEventListener("click", function(){
+let col4 = document.querySelector("column4")
+col4.addEventListener("click", function(){
   dropDisc(4)
 })
 
-let column5 = document.querySelector("column5")
-column5.addEventListener("click", function(){
+let col5 = document.querySelector("column5")
+col5.addEventListener("click", function(){
   dropDisc(5)
 })
 
-let column6 = document.querySelector("column6")
-column6.addEventListener("click", function(){
+let col6 = document.querySelector("column6")
+col6.addEventListener("click", function(){
   dropDisc(6)
 })
 
-let column7 = document.querySelector("column7")
-column7.addEventListener("click", function(){
+let col7 = document.querySelector("column7")
+col7.addEventListener("click", function(){
   dropDisc(7)
 })
 };
@@ -114,8 +119,7 @@ let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
 messageBox.append(startButton);
 startButton.addEventListener("click", function () {
-  // change to displayMessage function
-  alert(`Player ${currentPlayer} start`);
+  displayMessage(`Player ${currentPlayer} start`);
 });
 
 let testBoard1 = [
