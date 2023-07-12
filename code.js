@@ -11,12 +11,33 @@ let board = [
 let currentPlayer = 1;
 let numberOfDiscsPlayed = 0;
 
-let messageBox= document.querySelector(".messageBox")
-let gameDiv= document.querySelector(".game")
-let tableGrid= document.querySelector(".game.div")
+let dropDisc = function (event) {
+  let gameDiv= document.querySelector(".game")
+ for(let i=0; i < board.length; i += 1) {
+    let column= document.createElement("li")
+    column.id= i;
+    gameDiv.append(column)
+    let columnArray= board[i]
+  for(let j=0; j<columnArray.length; j += 1) {
+    let gameSlot= document.createElement("span")
+    let slotArray= columnArray[j]
+    if  (slotArray = 1) {
+    gameSlot.classList.add("playerBlack") 
+  } else if  (slotArray = 2) {
+    gameSlot.classList.add("playerRed")
+  }
+  else {
+    gameSlot.classList.add("")
+  }
+column.append(gameSlot)
+ }
 
+ }
 
+  checkForGameOver(board);
+};
 
+console.table(board)
 let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
   //return the player number who won, or null
@@ -38,24 +59,6 @@ let checkForGameOver = function (boardModel) {
     nextPlayer();
   }
 };
-let dropDisc = (countStart, cellValue) => {
-  let tableRow= document.querySelectorAll(".tableRow")
-  let gameCell= document.querySelectorAll(".gameCell")
-    if (board[countStart][cellValue] !== 0) {
-        numberOfDiscsPlayed= numberOfDiscsPlayed += 1;
-        dropDisc(countStart, cellValue)
-    } else {
-        let currentRow= tableRow[countStart].gameCell
-        currentRow[cellValue].classList.add("occupied", `player${currentPlayer}`)
-        board[countStart][cellValue]= currentPlayer; 
-        if(whoIsTheWinner(countStart, cellValue)) {
-          message.innerHTML= `Player <span> ${currentPlayer}</span> wins!`
-          return false;
-        }
-    }
-    checkForGameOver();
-    }
-    console.table(board)
 
 let displayMessage = function (message) {
   //Show message in the message box on the DOM
@@ -73,7 +76,7 @@ initializeGame();
 
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
-messageBox.append(startButton);
+document.body.append(startButton);
 startButton.addEventListener("click", function(){
   alert(`Player ${currentPlayer} start`)
 })
@@ -106,4 +109,3 @@ let testBoard3 = [
   [2, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
 ];
-
