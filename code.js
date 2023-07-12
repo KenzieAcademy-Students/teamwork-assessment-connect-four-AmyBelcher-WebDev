@@ -12,32 +12,30 @@ let currentPlayer = 1;
 let numberOfDiscsPlayed = 0;
 
 let dropDisc = function (event) {
-  let gameDiv= document.querySelector(".game")
- for(let i=0; i < board.length; i += 1) {
-    let column= document.createElement("li")
-    column.id= i;
-    gameDiv.append(column)
-    let columnArray= board[i]
-  for(let j=0; j<columnArray.length; j += 1) {
-    let gameSlot= document.createElement("div")
-    let slotArray= columnArray[j]
-    if  (slotArray = 1) {
-    gameSlot.classList.add("playerBlack") 
-  } else if  (slotArray = 2) {
-    gameSlot.classList.add("playerRed")
+  let gameDiv = document.querySelector(".game");
+  for (let i = 0; i < board.length; i += 1) {
+    let column = document.createElement("li");
+    column.id = i;
+    gameDiv.append(column);
+    let columnArray = board[i];
+    for (let j = 0; j < columnArray.length; j += 1) {
+      let gameSlot = document.createElement("div");
+      let slotArray = columnArray[j];
+      if ((slotArray = 1)) {
+        gameSlot.classList.add("playerBlack");
+      } else if ((slotArray = 2)) {
+        gameSlot.classList.add("playerRed");
+      } else {
+        gameSlot.classList.add("");
+      }
+      column.append(gameSlot);
+    }
   }
-  else {
-    gameSlot.classList.add("")
-  }
-column.append(gameSlot)
- }
-
- }
 
   checkForGameOver(board);
 };
 
-console.table(board)
+console.table(board);
 let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
   //return the player number who won, or null
@@ -73,15 +71,12 @@ let initializeGame = function () {
 
 initializeGame();
 
-
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
 document.body.append(startButton);
-startButton.addEventListener("click", function(){
-  alert(`Player ${currentPlayer} start`)
-})
-
-
+startButton.addEventListener("click", function () {
+  alert(`Player ${currentPlayer} start`);
+});
 
 let testBoard1 = [
   [0, 0, 0, 0, 0, 0, 0],
