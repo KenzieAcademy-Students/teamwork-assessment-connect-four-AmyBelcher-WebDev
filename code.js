@@ -79,15 +79,14 @@ let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
   //return the player number who won, or null
 }
+
 let gameWon= function(winner, tieGame) {}
 
-let isGameATie = function (boardModel) {
-  for (let i = 0; i < boardModel.length; i += 1) {
-    if (gameSlot === 0){
-      return false
+let isGameATie = function () {
+    if (numberOfDiscsPlayed === 42){
+      return true
     }
-  }
-  return true
+  return false
 }
 
 let nextPlayer = function () {
