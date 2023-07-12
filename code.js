@@ -1,35 +1,87 @@
 // Your Code Here.
-let gameArray= [
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0],
+let board = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
 ];
 
+let currentPlayer = 1;
+let numberOfDiscsPlayed = 0;
 
-let redPlayer = function(){
+let dropDisc = function (event) {
+  let gameDiv= document.querySelector(".game")
+ for(let i=0; i < board.length; i += 1) {
+    let column= document.createElement("li")
+    column.id= i;
+    gameDiv.append(column)
+    let columnArray= board[i]
+  for(let j=0; j<columnArray.length; j += 1) {
+    let gameSlot= document.createElement("div")
+    let slotArray= columnArray[j]
+    if  (slotArray = 1) {
+    gameSlot.classList.add("playerBlack") 
+  } else if  (slotArray = 2) {
+    gameSlot.classList.add("playerRed")
+  }
+  else {
+    gameSlot.classList.add("")
+  }
+column.append(gameSlot)
+ }
 
-}
-let blackPlayer = function(){
-    
-}
-    
-let currentPlayer;
+ }
+
+  checkForGameOver(board);
+};
+
+console.table(board)
+let whoIsTheWinner = function (boardModel) {
+  //check for 4 in a row
+  //return the player number who won, or null
+};
+
+let isGameATie = function (boardModel) {
+  //returns a boolean
+};
+
+let nextPlayer = function () {};
+
+let checkForGameOver = function (boardModel) {
+  //look at the board variable to find 4-in a row
+  let winner = whoIsTheWinner(boardModel);
+  let tieGame = isGameATie(boardModel);
+  if (winner !== null || tieGame) {
+    gameOver(winner, tieGame);
+  } else {
+    nextPlayer();
+  }
+};
 
 let displayMessage = function (message) {
   //Show message in the message box on the DOM
-}
+};
 
-let setUpClickHandlers = function () {}
+let setUpClickHandlers = function () {};
 
 let initializeGame = function () {
   //initialize various variables
-  setUpClickHandlers()
-}
+  setUpClickHandlers();
+};
 
-initializeGame()
+initializeGame();
+
+
+let startButton = document.createElement("button");
+startButton.innerHTML = "Start";
+document.body.append(startButton);
+startButton.addEventListener("click", function(){
+  alert(`Player ${currentPlayer} start`)
+})
+
+
 
 let testBoard1 = [
   [0, 0, 0, 0, 0, 0, 0],
@@ -38,7 +90,7 @@ let testBoard1 = [
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
   [0, 1, 1, 1, 1, 0, 0],
-]
+];
 
 let testBoard2 = [
   [0, 0, 0, 0, 0, 0, 0],
@@ -47,7 +99,7 @@ let testBoard2 = [
   [0, 0, 0, 2, 0, 0, 0],
   [0, 0, 0, 2, 0, 0, 0],
   [0, 1, 1, 2, 1, 0, 0],
-]
+];
 
 let testBoard3 = [
   [0, 0, 0, 0, 0, 0, 0],
@@ -56,4 +108,4 @@ let testBoard3 = [
   [2, 0, 0, 0, 0, 0, 0],
   [2, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
-]
+];
