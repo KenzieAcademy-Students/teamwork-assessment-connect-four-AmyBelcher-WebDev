@@ -8,7 +8,7 @@ let board = [
   [0, 0, 0, 0, 0, 0, 0],
 ]
 
-//let currentPlayer = 1
+let currentPlayer = 1
 let numberOfDiscsPlayed = 0
 
 let renderBoard = function (columnNum) {
@@ -43,6 +43,7 @@ let columnFull = function (columnArray) {
   }
 }
 
+
 let dropDisc = function (columnNum, columnIndex) {
   let black = 1
   let red = 2
@@ -71,7 +72,7 @@ let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
   //return the player number who won, or null
 }
-let gameWon = function (winner, tieGame) {}
+let gameWon= function(winner, tieGame) {}
 let isGameATie = function (boardModel) {
   //returns a boolean
 }
@@ -106,31 +107,32 @@ let setUpClickHandlers = function () {
   col1.addEventListener("click", function () {
     dropDisc(board, 1)
   })
-  let col2 = document.getElementById("column2")
-  col2.addEventListener("click", function () {
-    dropDisc(board, 2)
-  })
-  let col3 = document.getElementById("column3")
-  col3.addEventListener("click", function () {
-    dropDisc(board, 3)
-  })
-  let col4 = document.getElementById("column4")
-  col4.addEventListener("click", function () {
-    dropDisc(board, 4)
-  })
-  let col5 = document.getElementById("column5")
-  col5.addEventListener("click", function () {
-    dropDisc(board, 5)
-  })
-  let col6 = document.getElementById("column6")
-  col6.addEventListener("click", function () {
-    dropDisc(board, 6)
-  })
-  let col7 = document.getElementById("column7")
-  col7.addEventListener("click", function () {
-    dropDisc(board, 7)
-  })
-}
+    let col2 = document.getElementById("column2")
+    col2.addEventListener("click", function () {
+      dropDisc(board, 2)
+    })
+    let col3 = document.getElementById("column3")
+    col3.addEventListener("click", function () {
+      dropDisc(board, 3)
+    })
+    let col4 = document.getElementById("column4")
+    col4.addEventListener("click", function () {
+      dropDisc(board, 4)
+    })
+    let col5 = document.getElementById("column5")
+    col5.addEventListener("click", function () {
+      dropDisc(board, 5)
+    })
+    let col6 = document.getElementById("column6")
+    col6.addEventListener("click", function () {
+      dropDisc(board, 6)
+    })
+    let col7 = document.getElementById("column7")
+    col7.addEventListener("click", function () {
+      dropDisc(board, 7)
+    })
+  }
+
 
 let initializeGame = function () {
   //initialize various variables
@@ -172,3 +174,5 @@ let testBoard3 = [
   [2, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
 ]
+
+
