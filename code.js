@@ -80,8 +80,14 @@ let whoIsTheWinner = function (boardModel) {
   //return the player number who won, or null
 }
 let gameWon= function(winner, tieGame) {}
+
 let isGameATie = function (boardModel) {
-  //returns a boolean
+  for (let i = 0; i < boardModel; i += 1) {
+    if (gameSlot === 0){
+      return false
+    }
+  }
+  return true
 }
 
 let nextPlayer = function () {
@@ -155,7 +161,6 @@ let turnTracker = function (turnNumber) {
 }
 
 let initializeGame = function () {
-  //initialize various variables
   setUpClickHandlers()
 }
 
