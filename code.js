@@ -110,34 +110,39 @@ let checkForGameOver = function (boardModel) {
 };
 
 let setUpClickHandlers = function () {
-let col1 = document.querySelector("column1")
+let col1 = document.querySelector("#column1")
 col1.addEventListener("click", function(){
   dropDisc(1)
 })
 
-let col2 = document.querySelector("column2")
+let col2 = document.querySelector("#column2")
 col2.addEventListener("click", function(){
   dropDisc(2)
 })
 
-let col3 = document.querySelector("column3")
+let col3 = document.querySelector("#column3")
 col3.addEventListener("click", function(){
   dropDisc(3)
 })
 
-let col4 = document.querySelector("column4")
+let col4 = document.querySelector("#column4")
 col4.addEventListener("click", function(){
   dropDisc(4)
 })
 
-let col5 = document.querySelector("column5")
+let col5 = document.querySelector("#column5")
 col5.addEventListener("click", function(){
   dropDisc(5)
 })
 
-let col6 = document.querySelector("column6")
+let col6 = document.querySelector("#column6")
 col6.addEventListener("click", function(){
   dropDisc(6)
+})
+
+let col7 = document.querySelector("#column7")
+col7.addEventListener("click", function(){
+  dropDisc(7)
 })
 }
 
