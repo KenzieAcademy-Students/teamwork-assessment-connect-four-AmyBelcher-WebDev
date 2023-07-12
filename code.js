@@ -51,12 +51,15 @@ let initializeGame = function () {
 
 initializeGame();
 
+
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
 document.body.append(startButton);
-function start() {
-  alert("`${currentPlayer}` turn");
-}
+startButton.addEventListener("click", function(){
+  alert(`Player ${currentPlayer} start`)
+})
+
+
 
 let testBoard1 = [
   [0, 0, 0, 0, 0, 0, 0],
