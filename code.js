@@ -69,8 +69,9 @@ let dropDisc = function (columnNum, columnIndex) {
     }
   }
 }
+
 let displayMessage = function (message) {
-  message = document.getElementById(".messageBox")
+ messageBox.innerHTML = message
 };
 
 console.table(board)
@@ -107,24 +108,6 @@ let checkForGameOver = function (boardModel) {
     nextPlayer()
   }
 };
-let dropDisc = (countStart, cellValue) => {
-  let tableRow = document.querySelectorAll(".tableRow");
-  let gameCell = document.querySelectorAll(".gameCell");
-  if (board[countStart][cellValue] !== 0) {
-    numberOfDiscsPlayed = numberOfDiscsPlayed += 1;
-    dropDisc(countStart, cellValue);
-  } else {
-    let currentRow = tableRow[countStart].gameCell;
-    currentRow[cellValue].classList.add("occupied", `player${currentPlayer}`);
-    board[countStart][cellValue] = currentPlayer;
-    if (whoIsTheWinner(countStart, cellValue)) {
-      message.innerHTML = `Player <span> ${currentPlayer}</span> wins!`;
-      return false;
-    }
-  }
-  checkForGameOver();
-};
-console.table(board);
 
 let setUpClickHandlers = function () {
 let col1 = document.querySelector("column1")
@@ -166,52 +149,12 @@ let turnTracker = function (turnNumber) {
   return player
 }
 
-let displayMessage = function (message) {
-  //Show message in the message box on the DOM
-}
+// let initializeGame = function () {
+//   //initialize various variables
+//   setUpClickHandlers()
+// }
 
-let setUpClickHandlers = function () {
-  let col1 = document.getElementById("column1")
-  col1.addEventListener("click", function () {
-    dropDisc(board, 1)
-  })
-    let col2 = document.getElementById("column2")
-    col2.addEventListener("click", function () {
-      dropDisc(board, 2)
-    })
-    let col3 = document.getElementById("column3")
-    col3.addEventListener("click", function () {
-      dropDisc(board, 3)
-    })
-    let col4 = document.getElementById("column4")
-    col4.addEventListener("click", function () {
-      dropDisc(board, 4)
-    })
-    let col5 = document.getElementById("column5")
-    col5.addEventListener("click", function () {
-      dropDisc(board, 5)
-    })
-    let col6 = document.getElementById("column6")
-    col6.addEventListener("click", function () {
-      dropDisc(board, 6)
-    })
-    let col7 = document.getElementById("column7")
-    col7.addEventListener("click", function () {
-      dropDisc(board, 7)
-    })
-  }
-let col7 = document.querySelector("column7")
-col7.addEventListener("click", function(){
-  dropDisc(7)
-})
-};
-
-let initializeGame = function () {
-  //initialize various variables
-  setUpClickHandlers()
-}
-
-initializeGame()
+// initializeGame()
 
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
