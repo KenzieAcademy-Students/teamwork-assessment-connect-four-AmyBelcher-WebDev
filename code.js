@@ -82,7 +82,7 @@ let whoIsTheWinner = function (boardModel) {
 let gameWon= function(winner, tieGame) {}
 
 let isGameATie = function (boardModel) {
-  for (let i = 0; i < boardModel; i += 1) {
+  for (let i = 0; i < boardModel.length; i += 1) {
     if (gameSlot === 0){
       return false
     }
