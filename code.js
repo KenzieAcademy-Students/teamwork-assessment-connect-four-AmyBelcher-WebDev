@@ -7,26 +7,53 @@ let gameArray= [
     [0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0],
 ];
+
+
 let redPlayer = function(){
 
 }
 let blackPlayer = function(){
     
 }
+    
 let currentPlayer;
 
-function moveLeft() {}
-function moveRight() {}
-function moveUp() {}
-function moveDown() {}
-
-function addRandomTile() {}
-
-function checkIfGameHasEnded() {
-    return false
+let displayMessage = function (message) {
+  //Show message in the message box on the DOM
 }
 
-function resetBoard() {}
-//deletes old DOM and renders new DOM 
+let setUpClickHandlers = function () {}
 
-function renderBoard(){}
+let initializeGame = function () {
+  //initialize various variables
+  setUpClickHandlers()
+}
+
+initializeGame()
+
+let testBoard1 = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 1, 1, 1, 1, 0, 0],
+]
+
+let testBoard2 = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 2, 0, 0, 0],
+  [0, 0, 0, 2, 0, 0, 0],
+  [0, 0, 0, 2, 0, 0, 0],
+  [0, 1, 1, 2, 1, 0, 0],
+]
+
+let testBoard3 = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [2, 0, 0, 0, 0, 0, 0],
+  [2, 0, 0, 0, 0, 0, 0],
+  [2, 0, 0, 0, 0, 0, 0],
+  [2, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+]
