@@ -11,29 +11,29 @@ let board = [
 let currentPlayer = 1
 let numberOfDiscsPlayed = 0
 
-let renderBoard = function (columnNum) {
-  let gameDiv = document.querySelector(".game")
-  for (let i = 0; i < columnNum.length; i += 1) {
-    let column = document.createElement("li")
-    column.id = i
-    gameDiv.append(column)
-    let columnArray = board[i]
-    for (let j = 0; j < columnArray.length; j += 1) {
-      let gameSlot = document.createElement("div")
-      let slotArray = columnArray[j]
-      if ((slotArray = 1)) {
-        gameSlot.classList.add("playerBlack")
-      } else if ((slotArray = 2)) {
-        gameSlot.classList.add("playerRed")
-      } else {
-        gameSlot.classList.add("emptySpace")
-      }
-      column.append(gameSlot)
-    }
-  }
-  setUpClickHandlers()
-  checkForGameOver(board)
-}
+// let renderBoard = function (columnNum) {
+//   let gameDiv = document.querySelector(".game")
+//   for (let i = 0; i < columnNum.length + 1; i += 1) {
+//     let column = document.createElement("li")
+//     column.id = `column${i}`
+//     gameDiv.append(column)
+//     let columnArray = board[i]
+//     for (let j = 0; j < columnArray.length + 1; j += 1) {
+//       let gameSlot = document.createElement("div")
+//       let columnArray = columnArray[j]
+//       if ((columnArray = 1)) {
+//         gameSlot.classList.add("playerBlack")
+//       } else if ((columnArray = 2)) {
+//         gameSlot.classList.add("playerRed")
+//       } else {
+//         gameSlot.classList.add("emptySpace")
+//       }
+//       column.append(gameSlot)
+//     }
+//   }
+
+//   checkForGameOver(board)
+// }
 
 let columnFull = function (columnArray) {
   if (columnArray.includes(0) === true) {
@@ -53,6 +53,7 @@ let dropDisc = function (columnNum, columnIndex) {
   let currentDisc = black
   let columnArray = columnNum[columnIndex]
   let player = turnTracker(numberOfDiscsPlayed)
+  
   if (columnFull(columnArray) === true || gameWon(columnNum) === true) {
     return
   } else {
@@ -63,12 +64,25 @@ let dropDisc = function (columnNum, columnIndex) {
       if (columnArray[i] === 0) {
         columnArray[i] = currentDisc
         numberOfDiscsPlayed += 1
-        renderBoard(columnNum)
-        return
+        console.log(board)
+      }  for (let j = 0; j < columnArray.length + 1; j += 1) {
+        let gameSlot= document.getElementsByClassName("emptySpace") 
+              let columnSlot = columnArray[j]
+              if ((columnSlot = 1)) {
+                gameSlot.classList = "playerBlack"
+              } else if ((columnSlot = 2)) {
+                gameSlot.classList = "playerRed"
+              }               
+              //gameSlot.append()
+            }
+          }
       }
-    }
-  }
-}
+      setUpClickHandlers()
+      }
+    
+    
+  
+
 
 let displayMessage = function (message) {
  messageBox.innerHTML = message
@@ -87,6 +101,14 @@ let isGameATie = function () {
       return true
     }
   return false
+}
+
+let turnTracker = function (turnNumber) {
+  let player = "black"
+  if (turnNumber % 2 !== 0) {
+    player = "red"
+  }
+  return player
 }
 
 let nextPlayer = function () {
@@ -151,13 +173,8 @@ col7.addEventListener("click", function(){
 })
 }
 
-let turnTracker = function (turnNumber) {
-  let player = "black"
-  if (turnNumber % 2 !== 0) {
-    player = "red"
-  }
-  return player
-}
+
+
 
 let initializeGame = function () {
   setUpClickHandlers()
