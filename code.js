@@ -137,35 +137,41 @@ let checkForGameOver = function (boardModel) {
 };
 
 let setUpClickHandlers = function () {
-  let col1 = document.getElementById("column1")
-  col1.addEventListener("click", function () {
-    dropDisc(board, 0)
-  })
-    let col2 = document.getElementById("column2")
-    col2.addEventListener("click", function () {
-      dropDisc(board, 1)
-    })
-    let col3 = document.getElementById("column3")
-    col3.addEventListener("click", function () {
-      dropDisc(board, 2)
-    })
-    let col4 = document.getElementById("column4")
-    col4.addEventListener("click", function () {
-      dropDisc(board, 3)
-    })
-    let col5 = document.getElementById("column5")
-    col5.addEventListener("click", function () {
-      dropDisc(board, 4)
-    })
-    let col6 = document.getElementById("column6")
-    col6.addEventListener("click", function () {
-      dropDisc(board, 5)
-    })
-    let col7 = document.getElementById("column7")
-    col7.addEventListener("click", function () {
-      dropDisc(board, 6)
-    })
-  }
+let col1 = document.querySelector("#column1")
+col1.addEventListener("click", function(){
+  dropDisc(board, 0)
+})
+
+let col2 = document.querySelector("#column2")
+col2.addEventListener("click", function(){
+  dropDisc(board, 1)
+})
+
+let col3 = document.querySelector("#column3")
+col3.addEventListener("click", function(){
+  dropDisc(board, 2)
+})
+
+let col4 = document.querySelector("#column4")
+col4.addEventListener("click", function(){
+  dropDisc(board, 3)
+})
+
+let col5 = document.querySelector("#column5")
+col5.addEventListener("click", function(){
+  dropDisc(board, 4)
+})
+
+let col6 = document.querySelector("#column6")
+col6.addEventListener("click", function(){
+  dropDisc(board, 5)
+})
+
+let col7 = document.querySelector("#column7")
+col7.addEventListener("click", function(){
+  dropDisc(board, 6)
+})
+}
 
 
 
