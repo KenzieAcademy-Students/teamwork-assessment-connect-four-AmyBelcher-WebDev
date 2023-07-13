@@ -95,25 +95,25 @@ let whoIsTheWinner = function (boardModel) {
 
 let gameWon= function(boardModel) {
   // board[y+3][x] board[y][x+1]
-  // cell
+  // boardModel[y][x]
   const edgeX = boardModel[0].length - 2;
   // row
   const edgeY = boardModel.length - 2;
 
   for (let y = 0; y < boardModel.length; y = y + 1) {
     for (let x = 0; x < edgeX; x = x + 1) {
-      let cell = boardModel[y][x];
-      if(cell !== 0) {
-        if(cell === boardModel[y][x+1] && cell === boardModel[y][x+2] && cell === boardModel[y][x+3]) {
+    
+      if(boardModel[y][x] !== 0) {
+        if(boardModel[y][x] === boardModel[y][x+1] && boardModel[y][x] === boardModel[y][x+2] && boardModel[y][x] === boardModel[y][x+3]) {
           displayMessage(`Player ${currentPlayer} has a 4 in a row horizontally!`)
         }
       }
     }
     for (let y = 0; y < edgeY; y = y + 1) {
       for (let x = 0; x < boardModel[0].length; x = x + 1) {
-        cell = boardModel[y][x];
-        if (cell !== 0) {
-          if (cell === boardModel[y+1][x] && cell === boardModel[y+2][x] && cell === boardModel[y+3][x]) {
+        
+        if (boardModel[y][x] !== 0) {
+          if (boardModel[y][x] === boardModel[y+1][x] && boardModel[y][x] === boardModel[y+2][x] && boardModel[y][x] === boardModel[y+3][x]) {
             displayMessage(`Player ${currentPlayer} has a 4 in a row vertically!`)
           }
         }
@@ -121,22 +121,22 @@ let gameWon= function(boardModel) {
     }
     for (let y = 0; y < edgeY; y = y + 1) {
       for (let x = 0; x < edgeX; x = x + 1) {
-        cell = boardModel[y][x];
-        if (cell !== 0) {
-          if (cell === boardModel[y+1][x+1] && cell === boardModel[y+2][x+2] && cell === boardModel[y+3][x+3]) {
+        
+        if (boardModel[y][x] !== 0) {
+          if (boardModel[y][x] === boardModel[y+1][x+1] && boardModel[y][x] === boardModel[y+2][x+2] && boardModel[y][x] === boardModel[y+3][x+3]) {
             displayMessage(`Player ${currentPlayer} has a 4 in a row diagonally!`)
-            // diagonally right
+            // diagonally down right
           }
         }
       }
     }
     for (let y = 2; y < boardModel.length; y = y + 1){
       for (let x = 0; x < edgeX; x = x + 1) {
-        cell = boardModel[y][x];
-        if (cell !== 0) {
-          if (cell === boardModel[y-1][x+1] && cell === boardModel[y-2][x+2] && cell === boardModel[y-2][x+2]) {
+        
+        if (boardModel[y][x] !== 0) {
+          if (boardModel[y][x] === boardModel[y-1][x+1] && boardModel[y][x] === boardModel[y-2][x+2] && boardModel[y][x] === boardModel[y-3][x+3]) {
             displayMessage(`Player ${currentPlayer} has a 4 in a row diagonally!`)
-            // diagonally left
+            // diagonally down left
           }
         }
       }
