@@ -137,7 +137,7 @@ let gameWon= function(boardModel) {
         cell = boardModel[y][x];
         if (cell !== 0) {
           if (cell === boardModel[y-1][x+1] && cell === boardModel[y-2][x+2] && cell === boardModel[y-2][x+2]) {
-            console.log(`Player ${currentPlayer} has a 4 in a row diagonally!`)
+            displayMessage(`Player ${currentPlayer} has a 4 in a row diagonally!`)
             // diagonally left
           }
         }
