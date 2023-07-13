@@ -117,37 +117,37 @@ let checkForGameOver = function (boardModel) {
 let setUpClickHandlers = function () {
 let col1 = document.querySelector("#column1")
 col1.addEventListener("click", function(){
-  dropDisc(1)
+  dropDisc(board, 0)
 })
 
 let col2 = document.querySelector("#column2")
 col2.addEventListener("click", function(){
-  dropDisc(2)
+  dropDisc(board, 1)
 })
 
 let col3 = document.querySelector("#column3")
 col3.addEventListener("click", function(){
-  dropDisc(3)
+  dropDisc(board, 2)
 })
 
 let col4 = document.querySelector("#column4")
 col4.addEventListener("click", function(){
-  dropDisc(4)
+  dropDisc(board, 3)
 })
 
 let col5 = document.querySelector("#column5")
 col5.addEventListener("click", function(){
-  dropDisc(5)
+  dropDisc(board, 4)
 })
 
 let col6 = document.querySelector("#column6")
 col6.addEventListener("click", function(){
-  dropDisc(6)
+  dropDisc(board, 5)
 })
 
 let col7 = document.querySelector("#column7")
 col7.addEventListener("click", function(){
-  dropDisc(7)
+  dropDisc(board, 6)
 })
 }
 
