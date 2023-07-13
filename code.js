@@ -87,12 +87,65 @@ let displayMessage = function (message) {
 };
 
 console.table(board)
+
 let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
   //return the player number who won, or null
 }
 
-let gameWon = function (winner, tieGame) { }
+let gameWon= function(boardModel) {
+  // board[y+3][x] board[y][x+1]
+  // cell
+  const edgeX = boardModel[0].length - 2;
+  // row
+  const edgeY = boardModel.length - 2;
+
+  for (let y = 0; y < boardModel.length; y = y + 1) {
+    for (let x = 0; x < edgeX; x = x + 1) {
+      let cell = boardModel[y][x];
+      if(cell !== 0) {
+        if(cell === boardModel[y][x+1] && cell === boardModel[y][x+2] && cell === boardModel[y][x+3]) {
+          displayMessage(`Player ${currentPlayer} has a 4 in a row horizontally!`)
+        }
+      }
+    }
+    for (let y = 0; y < edgeY; y = y + 1) {
+      for (let x = 0; x < boardModel[0].length; x = x + 1) {
+        cell = boardModel[y][x];
+        if (cell !== 0) {
+          if (cell === boardModel[y+1][x] && cell === boardModel[y+2][x] && cell === boardModel[y+3][x]) {
+            displayMessage(`Player ${currentPlayer} has a 4 in a row vertically!`)
+          }
+        }
+      }
+    }
+    for (let y = 0; y < edgeY; y = y + 1) {
+      for (let x = 0; x < edgeX; x = x + 1) {
+        cell = boardModel[y][x];
+        if (cell !== 0) {
+          if (cell === boardModel[y+1][x+1] && cell === boardModel[y+2][x+2] && cell === boardModel[y+3][x+3]) {
+            displayMessage(`Player ${currentPlayer} has a 4 in a row diagonally!`)
+            // diagonally right
+          }
+        }
+      }
+    }
+    for (let y = 2; y < boardModel.length; y = y + 1){
+      for (let x = 0; x < edgeX; x = x + 1) {
+        cell = boardModel[y][x];
+        if (cell !== 0) {
+          if (cell === boardModel[y-1][x+1] && cell === boardModel[y-2][x+2] && cell === boardModel[y-2][x+2]) {
+            displayMessage(`Player ${currentPlayer} has a 4 in a row diagonally!`)
+            // diagonally left
+          }
+        }
+      }
+    }
+  }
+
+
+ 
+}
 
 let isGameATie = function () {
   if (numberOfDiscsPlayed === 42) {
@@ -212,14 +265,4 @@ let testBoard3 = [
   [2, 0, 0, 0, 0, 0, 0],
   [2, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
-]
-
-
-let testBoard4 = [
-  [1, 0, 0, 0, 0, 0, 0],
-  [2, 0, 0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 0, 0, 0],
-  [2, 0, 0, 0, 0, 0, 0],
-  [2, 0, 0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 0, 0, 0],
 ]
