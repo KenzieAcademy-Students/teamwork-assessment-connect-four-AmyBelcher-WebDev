@@ -46,11 +46,11 @@ tr {
     width: 100px;
 }
 .playerRed{
-    color:red;
+    background-color:red;
     border-radius: 50%;
 }
-.blackPlayer{
-    color:black;
+.playerBlack{
+    background-color:black;
     border-radius:50%;
     size:50px 50px;
 }
