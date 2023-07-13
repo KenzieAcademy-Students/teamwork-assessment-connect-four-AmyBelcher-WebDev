@@ -38,8 +38,8 @@ tr {
    border: 2px solid blue;
    display: flex;
    flex-wrap: wrap;
-   height: 600px;
-   width: 700px;
+   height: 623px;
+   width: 704px;
 }
 .game div {
     height:100px;
@@ -53,4 +53,9 @@ tr {
     color:black;
     border-radius:50%;
     size:50px 50px;
+}
+
+.emptySpace {
+    background-color: transparent;
+    border: 2px solid blue;
 }
