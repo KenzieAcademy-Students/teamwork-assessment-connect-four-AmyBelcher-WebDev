@@ -1,61 +1,95 @@
 /* Write your CSS Here. */
 
 button {
-    line-height:normal;
-    background-color: cornflowerblue;
-    font-size: 24px;
+  line-height: normal;
+  background-color: cornflowerblue;
+  font-size: 24px;
 }
 
 button:hover {
-    background-color: blue;
+  background-color: blue;
 }
 
-body{
-    margin: 20px;
-    padding: 20px;
-    box-sizing: border-box;
+body {
+  margin: 0px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  margin: 20px;
 }
-#table-grid {
-    width: 700px;
-    height: 600px;
+#column0 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
 }
-tr {
-    height: 100px;
-    width: 100px;
+#column1 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
 }
-
+#column2 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+#column3 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+#column4 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+#column5 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+#column6 {
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
 .messageBox {
-    height: 40px;
-    width: 250px
+  height: 40px;
+  width: 250px;
 }
 
 .game {
-   border: 2px solid blue;
-   display: flex;
-   flex-wrap: wrap;
-   height: 623px;
-   width: 704px;
+  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  height: 650px;
+  width: 780px;
 }
 .game div {
-    height:100px;
-    width: 100px;
+  height: 100px;
+  width: 100px;
 }
-.playerRed{
-    background-color:red;
-    border-radius: 50%;
+.playerRed {
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
 }
-.playerBlack{
-    background-color:black;
-    border-radius:50%;
-    size:50px 50px;
+.playerYellow {
+  background-color: yellow;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+ 
 }
 
 .emptySpace {
-    background-color: transparent;
-    border: 2px solid blue;
+  margin: 2px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid blue;
 }
