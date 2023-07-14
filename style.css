@@ -16,6 +16,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 h1 {
@@ -31,21 +32,28 @@ h1 {
   height: 645px;
   width: 780px;
 }
+
 .game div {
   margin: 5px;
   height: 100px;
   width: 100px;
 }
 
+body {
+  align-items: center;
+}
+
 .messageBox {
   height: 40px;
   width: 250px;
+  text-align: center;
 }
 
 .playerRed {
   background-color: red;
   border-radius: 50%;
 }
+
 .playerYellow {
   background-color: yellow;
   border-radius: 50%;
