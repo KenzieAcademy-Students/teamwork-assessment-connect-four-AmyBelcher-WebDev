@@ -11,30 +11,6 @@ let board = [
 let currentPlayer = 1
 let numberOfDiscsPlayed = 0
 
-// let renderBoard = function (columnNum) {
-//   let gameDiv = document.querySelector(".game")
-//   for (let i = 0; i < columnNum.length + 1; i += 1) {
-//     let column = document.createElement("li")
-//     column.id = `column${i}`
-//     gameDiv.append(column)
-//     let columnArray = board[i]
-//     for (let j = 0; j < columnArray.length + 1; j += 1) {
-//       let gameSlot = document.createElement("div")
-//       let columnArray = columnArray[j]
-//       if ((columnArray = 1)) {
-//         gameSlot.classList.add("playerBlack")
-//       } else if ((columnArray = 2)) {
-//         gameSlot.classList.add("playerRed")
-//       } else {
-//         gameSlot.classList.add("emptySpace")
-//       }
-//       column.append(gameSlot)
-//     }
-//   }
-
-//   checkForGameOver(board)
-// }
-
 let columnFull = function (boardModel, columnIndex) {
   if (boardModel[0][columnIndex] === 0) {
     return false
@@ -79,14 +55,9 @@ let dropDisc = function (boardModel, columnIndex) {
 }
 
 
-
-
-
 let displayMessage = function (message) {
   messageBox.innerHTML = message
 };
-
-console.table(board)
 
 let whoIsTheWinner = function (boardModel) {
   //check for 4 in a row
@@ -149,6 +120,7 @@ let gameWon= function(boardModel) {
 
 let isGameATie = function () {
   if (numberOfDiscsPlayed === 42) {
+    messageBox.append= "Tie game!"
     return true
   }
   return false
@@ -224,14 +196,9 @@ let setUpClickHandlers = function () {
   })
 }
 
-
-
-
 let initializeGame = function () {
   setUpClickHandlers()
 }
-
-initializeGame()
 
 let startButton = document.createElement("button");
 startButton.innerHTML = "Start";
@@ -239,6 +206,8 @@ messageBox.append(startButton);
 startButton.addEventListener("click", function () {
   displayMessage(`Player ${currentPlayer} start`);
 });
+
+initializeGame()
 
 let testBoard1 = [
   [0, 0, 0, 0, 0, 0, 0],
