@@ -48,10 +48,10 @@ let tableGrid = document.querySelector(".game.div");
 
 
 let dropDisc = function (boardModel, columnIndex) {
-  let black = 1
+  let yellow = 1
   let red = 2
-  let currentDisc = black
-  let discClass= "playerBlack"
+  let currentDisc = yellow
+  let discClass= "playerYellow"
   let player = turnTracker(numberOfDiscsPlayed)
 
   if (columnFull(boardModel, columnIndex) === true || gameWon(boardModel) === true) {
@@ -155,7 +155,7 @@ let isGameATie = function () {
 }
 
 let turnTracker = function (turnNumber) {
-  let player = "black"
+  let player = "yellow"
   if (turnNumber % 2 !== 0) {
     player = "red"
   }
