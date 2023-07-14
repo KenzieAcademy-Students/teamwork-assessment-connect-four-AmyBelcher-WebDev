@@ -85,10 +85,12 @@ h1 {
 }
 
 .playerRed {
+    margin-top: 5px;
   background-color: red;
   border-radius: 50%;
 }
 .playerYellow {
+    margin-top: 5px;
   background-color: yellow;
   border-radius: 50%;
   height: 10px;
